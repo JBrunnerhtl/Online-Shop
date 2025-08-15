@@ -1,0 +1,32 @@
+
+nav.navStyle {
+    background-color: var(--background-color);
+
+}
+ul.ulStyleInNav{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    list-style-type: none;
+    display: flex;
+
+
+}
+li.liStyleInNav {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 0.5em 2em 0 0;
+    font-size: large;
+}
+a.aStyleInNav{
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: var(--background-color);
+    transition: color 1s ease;
+}
+a.aStyleInNav:hover{
+    color: var(--hover-color-in-nav);
+    background-color: var(--background-color);
+    transition: color 1s ease;
+
+
+}

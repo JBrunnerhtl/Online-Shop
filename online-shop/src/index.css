@@ -1,0 +1,9 @@
+:root {
+    --background-color: black;
+    --text-color: white;
+    --hover-color-in-nav: #00BFFF;
+}
+html, body
+{
+    background-color: var(--background-color);
+}
