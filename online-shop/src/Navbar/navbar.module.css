@@ -84,3 +84,17 @@ a.aStyleInNav:hover{
 
 
 }
+
+img.imgStyleForNavbar{
+    cursor: pointer;
+    width: 20px;
+    padding: 0;
+}
+button.buttonStyleForNavbar {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    padding: 0.5em 1em;
+
+}
