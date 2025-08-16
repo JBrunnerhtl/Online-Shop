@@ -49,6 +49,7 @@ ul.ulStyleInNav{
     }
 }
 li.liStyleInNavMobile {
+    translateX: -100%;
     color: var(--text-color);
     background-color: var(--background-color);
     padding: 0.5em 2em 0 0;
