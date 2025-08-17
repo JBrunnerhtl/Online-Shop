@@ -2,6 +2,9 @@
     --background-color: black;
     --text-color: white;
     --hover-color-in-nav: #00BFFF;
+    --font: "Arial", sans-serif;
+    --border-product-color: white;
+    --border-radius-products: 10px;
 }
 html, body
 {

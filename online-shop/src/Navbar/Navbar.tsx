@@ -22,7 +22,7 @@ function Navbar(props: { items: { id: number, name: string, url: string }[] }) {
            className={style.aStyleInNav}>{item.name}</a>
     </li>);
     const navBar = <nav className={style.navStyle}>
-        <ul className={style.ulStyleInNav}>
+        <ul className={`${style.ulStyleInNav} ${mobile ? showNav ? style.ulFlyIn : style.ulFlyOut: null}`}>
             {elements}
         </ul>
     </nav>;
@@ -39,12 +39,13 @@ function Navbar(props: { items: { id: number, name: string, url: string }[] }) {
     return (
         mobile ? (
             <>
+                <div>
                 <button type="button" className={style.buttonStyleForNavbar} onClick={() => {
                     setTimeout(() => setShowNav(prev => !prev), 100);
 
                 }}>
                     {showNav ? exit : homeIcon}
-                </button>
+                </button></div>
                 {isVisible && navBar}
             </>
         ) : (

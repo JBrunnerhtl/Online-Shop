@@ -1,7 +1,7 @@
 
 nav.navStyle {
     background-color: var(--background-color);
-
+    font-family: var(--font), sans-serif;
 }
 ul.ulStyleInNav{
     background-color: var(--background-color);
@@ -9,6 +9,16 @@ ul.ulStyleInNav{
     list-style-type: none;
     display: flex;
 
+
+
+}
+ul.ulFlyIn {
+    animation: fly-in-from-left 1s ease-in-out;
+    z-index: 999;
+
+}
+ul.ulFlyOut {
+    animation: fly-out-from-left 1s ease-in-out;
 
 }
 @media (max-width: 768px) {
@@ -20,7 +30,8 @@ ul.ulStyleInNav{
         flex-direction: column;
         padding: 0;
         margin: 0;
-
+        height: 100vh;
+        position: fixed;
     }
 }
 
