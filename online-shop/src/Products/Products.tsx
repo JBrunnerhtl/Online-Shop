@@ -1,33 +1,29 @@
 import Product from "../Card/Product.ts";
 import type {JsonType} from "../Type.ts"
 import Card from "../Card/Card.tsx";
-import type {ReactElement} from "react";
-import {useState} from "react";
+import {type ReactElement} from "react";
+import {useState, useEffect} from "react";
 
 function Products() {
-    let products: Promise<Product[]>;
 
-    try
-    {
-        products = GetData();
+    const [data, setData] = useState<ReactElement[]>([]);
+    useEffect(() => {
+        async function fetchData() {
+            let products: Product[] = [];
 
-    }catch (err)
-    {
-        console.log("Error while fetching products: ");
-        console.log(err);
-    }
-
-    const [cards, setCards] = useState<ReactElement[]>([]);
-    products.then((data) => {
-        let basket: ReactElement[] = []
-        data.forEach((item) => {
-            basket.push(<Card img={item.image} description={item.description} price={item.price} />)
-
-        })
-        setCards(basket);
-    })
-
-    return (<>{cards}</>);
+            try {
+                products = await GetData();
+                setData(() => products.map((product: Product) => <Card img={product.image} price={product.price} description={product.description}/>));
+            }
+            catch (err)
+            {
+                console.error(err);
+                console.log("Check connection to the server");
+            }
+        }
+        fetchData();
+    }, []);
+    return (<>{data}</>);
 }
 
 async function GetData()
