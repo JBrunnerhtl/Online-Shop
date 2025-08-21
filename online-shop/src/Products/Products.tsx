@@ -3,7 +3,7 @@ import type {JsonType} from "../Type.ts"
 import Card from "../Card/Card.tsx";
 import {type ReactElement} from "react";
 import {useState, useEffect} from "react";
-
+import style from "./products.module.css"
 function Products() {
 
     const [data, setData] = useState<ReactElement[]>([]);
@@ -23,7 +23,11 @@ function Products() {
         }
         fetchData();
     }, []);
-    return (<>{data}</>);
+    return (<>
+        <div className={style.productsDivStyle}>
+            {data}
+        </div>
+    </>);
 }
 
 async function GetData()

@@ -9,4 +9,12 @@
 html, body
 {
     background-color: var(--background-color);
+    overflow-x: hidden !important;
+}
+@media (max-width: 768px) {
+    html, body
+    {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
 }

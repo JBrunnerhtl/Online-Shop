@@ -14,6 +14,11 @@ div.card {
     margin: 2%;
     padding: 1%;
     text-align: center;
+    transition: transform 0.2s;
+}
+div.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
 }
 
 button.buttonCard {
@@ -26,9 +31,9 @@ button.buttonCard {
     border-radius: var(--border-radius-products);
     font-size: medium;
     font-family: var(--font), sans-serif;
-    transition: font-size 1s ease;
+    transition: transform 0.2s;
 }
 button.buttonCard:hover {
-    font-size: large;
-    transition: font-size 1s ease;
+    transform: scale(1.05);
+    transition: transform 0.2s;
 }
