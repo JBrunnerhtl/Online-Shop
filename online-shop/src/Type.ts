@@ -3,3 +3,9 @@ export type NavbarItems = {
     name: string,
     url: string,
 }
+export type JsonType = {
+    id: number;
+    img: string;
+    description: string;
+    price: number;
+}

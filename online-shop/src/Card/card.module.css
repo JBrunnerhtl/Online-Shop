@@ -1,6 +1,6 @@
 p.descriptionText {
     font-size: medium;
-    color: white;
+    color: var(--text-color);
     font-family: var(--font), sans-serif;
 }
 p.priceText {
@@ -13,4 +13,22 @@ div.card {
     display: inline-block;
     margin: 2%;
     padding: 1%;
+    text-align: center;
+}
+
+button.buttonCard {
+    text-align: center;
+    background-color: var(--hover-color-in-nav);
+    color: white;
+    cursor: pointer;
+    padding: 4%;
+    border: none;
+    border-radius: var(--border-radius-products);
+    font-size: medium;
+    font-family: var(--font), sans-serif;
+    transition: font-size 1s ease;
+}
+button.buttonCard:hover {
+    font-size: large;
+    transition: font-size 1s ease;
 }

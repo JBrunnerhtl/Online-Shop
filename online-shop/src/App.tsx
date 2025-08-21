@@ -1,6 +1,7 @@
 import Navbar from "./Navbar/Navbar.tsx"
 import {type NavbarItems} from "./Type.ts"
-import Card from "./Card/Card.tsx"
+
+import Products from "./Products/Products.tsx";
 function App() {
 
   const navbarElements: NavbarItems[] = [
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
         <Navbar items={navbarElements} />
-        <Card img = "https://placehold.co/150x150" description = "New Product" price = {15}/>
+        <Products/>
     </>
   )
 }
