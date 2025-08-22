@@ -31,6 +31,7 @@ Card.defaultProps = {
 
 async function AddToBasket(product: Product)
 {
+
     let lenght: number = 1;
     const response = await fetch("http://localhost:3000/basket");
     if(response.ok)

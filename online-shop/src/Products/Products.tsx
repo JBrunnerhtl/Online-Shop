@@ -13,7 +13,7 @@ function Products() {
 
             try {
                 products = await GetData();
-                setData(() => products.map((product: Product) => <Card img={product.image} price={product.price} description={product.description}/>));
+                setData(() => products.map((product: Product, id: number) => <Card key = {id} img={product.image} price={product.price} description={product.description}/>));
             }
             catch (err)
             {
