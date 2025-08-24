@@ -1,6 +1,6 @@
 import Navbar from "./Navbar/Navbar.tsx"
 import {type NavbarItems} from "./Type.ts"
-
+import {BrowserRouter as Router,Route, Routes} from "react-router-dom"
 import Products from "./Products/Products.tsx";
 function App() {
 
@@ -12,8 +12,14 @@ function App() {
   ]
   return (
     <>
+        <Router>
         <Navbar items={navbarElements} />
-        <Products/>
+            <div>
+                <Routes>
+                    <Route path="/" element = {<Products/>}></Route>
+                </Routes>
+            </div>
+        </Router>
     </>
   )
 }
