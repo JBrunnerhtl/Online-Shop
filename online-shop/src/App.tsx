@@ -2,6 +2,7 @@ import Navbar from "./Navbar/Navbar.tsx"
 import {type NavbarItems} from "./Type.ts"
 import {BrowserRouter as Router,Route, Routes} from "react-router-dom"
 import Products from "./Products/Products.tsx";
+import Basket from "./Basket/basket.tsx";
 function App() {
 
   const navbarElements: NavbarItems[] = [
@@ -17,6 +18,7 @@ function App() {
             <div>
                 <Routes>
                     <Route path="/" element = {<Products/>}></Route>
+                    <Route path="/basket" element={<Basket/>}></Route>
                 </Routes>
             </div>
         </Router>

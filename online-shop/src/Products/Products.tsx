@@ -13,7 +13,7 @@ function Products() {
 
             try {
                 products = await GetData();
-                setData(() => products.map((product: Product, id: number) => <Card key = {id} img={product.image} price={product.price} description={product.description}/>));
+                setData(() => products.map((product: Product, id: number) => <Card key = {id} img={product.image} price={product.price} description={product.description} productId={product.productId}/>));
             }
             catch (err)
             {
@@ -37,7 +37,7 @@ async function GetData()
     {
         const data: JsonType[] = await response.json();
         return data.map(a => {
-            return new Product(a.img, a.description, a.price);
+            return new Product(a.img, a.description, a.price, a.productId);
         });
     }
     throw new Error("Can't fetch data");

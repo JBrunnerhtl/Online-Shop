@@ -8,4 +8,9 @@ export type JsonType = {
     img: string;
     description: string;
     price: number;
+    productId: number;
+}
+export type BasketItem = {
+    item: JsonType,
+    quantity: number
 }

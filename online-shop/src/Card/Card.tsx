@@ -1,9 +1,10 @@
 import PropTypes from "prop-types"
 import style from "./card.module.css"
 import Product from "./Product.ts"
-function Card(props: {img: string, description: string, price: number})
+function Card(props: {img: string, description: string, price: number, productId: number})
 {
-    const product: Product = new Product(props.img, props.description, props.price);
+    const product: Product = new Product(props.img, props.description, props.price, props.productId);
+
     return(
         <>
             <div className={style.card}>
@@ -20,7 +21,8 @@ function Card(props: {img: string, description: string, price: number})
 Card.PropTypes = {
     img: PropTypes.string,
     description: PropTypes.string,
-    price: PropTypes.number
+    price: PropTypes.number,
+    productId: PropTypes.number
 }
 Card.defaultProps = {
     img: "https://placehold.co/150x150",
@@ -51,9 +53,10 @@ async function AddToBasket(product: Product)
         },
         body: JSON.stringify({
             id: lenght,
-            image: product.getImage(),
+            img: product.getImage(),
             description: product.getDescription(),
-            price: product.getPrice()
+            price: product.getPrice(),
+            productId: product.getProductId()
         })
     }).then((response) => {
         if (!response.ok) {
