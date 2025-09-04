@@ -8,7 +8,8 @@ div.outerDiv
     flex-wrap: wrap;
     justify-content: center;
     border: 3px solid var(--border-product-color);
-
+    transition: all 0.3s;
+    border-radius: var(--border-radius-products);
 }
 
 div.informationDiv
@@ -23,4 +24,37 @@ div.imageDiv
 {
     margin: 4rem;
     align-self: center;
+}
+div.outerDiv:hover
+{
+    transform: scale(1.05);
+    border-color: var(--hover-color-in-nav);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+button.buttonStylePlus
+{
+
+    height: 30px;
+    width: 30px;
+    background-color: lightgreen;
+    color: white;
+    border: none;
+    margin: 1rem;
+    transition: all 0.3s;
+}
+button.buttonStyleMinus
+{
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    color: white;
+    border: none;
+    margin: 1rem;
+    transition: all 0.3s;
+}
+
+button.buttonStylePlus:hover, button.buttonStyleMinus:hover
+{
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
 }

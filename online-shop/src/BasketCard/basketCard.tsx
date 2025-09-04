@@ -1,11 +1,19 @@
 import PropTypes from "prop-types";
 import style from "./basketCard.module.css"
 import type {JsonType} from "../Type.ts";
-
-function BasketCard(props: {item: JsonType, quantity: number})
+import {useEffect, useState} from "react";
+const path = "http://localhost:3000/basket";
+function BasketCard(props: {item: JsonType, quantity: number, onDelete: () => void})
 {
-    console.log(props.item)
+    const [count, setCount] = useState<number>(props.quantity);
+    useEffect(() => {
+        if(count === 0)
+        {
+            props.onDelete();
+        }
+    }, [count, props]);
     return(
+        count > 0 ?
         <div>
         <div className= {style.outerDiv}>
             <div className={style.imageDiv}>
@@ -16,13 +24,45 @@ function BasketCard(props: {item: JsonType, quantity: number})
                 <p>{props.item.price} €</p>
             </div>
             <div className={style.informationDiv}>
-                <button>-</button>
-                <span>{props.quantity}</span>
-                <button>+</button>
+                <button className={style.buttonStyleMinus} onClick={()=>{deleteItemFromBasket(props.item.productId).then(); setCount(c => c -1); console.log(count)}}>-</button>
+                <span>{count}</span>
+                <button className={style.buttonStylePlus} onClick={()=> {addItemToBasket(props.item).then(); setCount(c => c +1)}}>+</button>
             </div>
         </div>
         </div>
+        : <div></div>
     )
+}
+
+async function deleteItemFromBasket(id: number){
+    const response = await fetch(path)
+    const data: JsonType[] = await response.json();
+    data.reverse()
+    for (const item of data) {
+        if (item.productId === id) {
+            await fetch(path + "/" + item.id, {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+            });
+            break;
+        }
+    }
+
+
+
+}
+async function addItemToBasket(product: JsonType)
+{
+    fetch(path, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            productId: product.productId,
+            img: product.img,
+            description: product.description,
+            price: product.price
+        })
+    }).then((res) => res.json())
 }
 BasketCard.PropTypes = {
     item: PropTypes.arrayOf(PropTypes.shape({

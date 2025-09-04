@@ -6,3 +6,11 @@ div.divStyle
     align-items: center;
     justify-content: center;
 }
+h1.h1Style
+{
+    color: white;
+    text-align: center;
+    font-family: var(--font), sans-serif;
+    font-size: xx-large;
+    margin-top: 2rem;
+}

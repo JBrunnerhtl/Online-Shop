@@ -50,34 +50,5 @@
       "productId": 7
     }
   ],
-  "basket": [
-    {
-      "id": 1,
-      "img": "https://placehold.co/150x150",
-      "description": "New Product",
-      "price": 15,
-      "productId": 1
-    },
-    {
-      "id": 2,
-      "img": "https://placehold.co/150x150",
-      "description": "Another Product",
-      "price": 20,
-      "productId": 2
-    },
-    {
-      "id": 3,
-      "img": "https://placehold.co/150x150",
-      "description": "Another Product",
-      "price": 20,
-      "productId": 2
-    },
-    {
-      "id": 4,
-      "img": "https://placehold.co/150x150",
-      "description": "Another Product",
-      "price": 20,
-      "productId": 2
-    }
-  ]
+  "basket": []
 }

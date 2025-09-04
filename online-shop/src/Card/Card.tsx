@@ -33,26 +33,12 @@ Card.defaultProps = {
 
 async function AddToBasket(product: Product)
 {
-
-    let lenght: number = 1;
-    const response = await fetch("http://localhost:3000/basket");
-    if(response.ok)
-    {
-        const data = await response.json();
-        lenght += data.length;
-    }
-    else
-    {
-        console.error("Failed to fetch basket data");
-    }
-
     await fetch("http://localhost:3000/basket" ,{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            id: lenght,
             img: product.getImage(),
             description: product.getDescription(),
             price: product.getPrice(),
