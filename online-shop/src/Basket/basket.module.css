@@ -1,0 +1,8 @@
+div.divStyle
+{
+    display: block;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}

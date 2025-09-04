@@ -6,17 +6,21 @@ function BasketCard(props: {item: JsonType, quantity: number})
 {
     console.log(props.item)
     return(
+        <div>
         <div className= {style.outerDiv}>
+            <div className={style.imageDiv}>
             <img src={props.item.img} alt = "product picture"/>
-            <div className={style.descriptionDiv}>
+            </div>
+            <div className={style.informationDiv}>
                 <p>{props.item.description}</p>
                 <p>{props.item.price} €</p>
             </div>
-            <div className={style.quantityDiv}>
+            <div className={style.informationDiv}>
                 <button>-</button>
                 <span>{props.quantity}</span>
                 <button>+</button>
             </div>
+        </div>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import type {BasketItem, JsonType} from "../Type.ts";
 import {type ReactElement, useEffect, useState} from "react";
 import BasketCard from "../BasketCard/basketCard.tsx"
-
+import style from "./basket.module.css"
 
 function Basket()
 {
@@ -42,7 +42,7 @@ function Basket()
 
     return(
 
-        <div style={{"display": "flex-box", "margin": "10px"}}>
+        <div className={style.divStyle}>
             {basketItems}
         </div>
     )
