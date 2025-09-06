@@ -72,7 +72,8 @@ BasketCard.PropTypes = {
         price: PropTypes.number,
         productId: PropTypes.number
     })),
-    quantity: PropTypes.number
+    quantity: PropTypes.number,
+    onDelete: PropTypes.func,
 }
 BasketCard.defaultProps = {
     item: [{
@@ -82,6 +83,7 @@ BasketCard.defaultProps = {
         price: -1,
         productId: -1
     }],
-    quantity: -1
+    quantity: -1,
+    onDelete: () => {}
 }
 export default BasketCard;

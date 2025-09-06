@@ -50,5 +50,13 @@
       "productId": 7
     }
   ],
-  "basket": []
+  "basket": [
+    {
+      "id": "12cf",
+      "img": "https://placehold.co/150x150",
+      "description": "Seventh Product",
+      "price": 45,
+      "productId": 7
+    }
+  ]
 }

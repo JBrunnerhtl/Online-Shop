@@ -41,6 +41,8 @@ button.buttonStylePlus
     border: none;
     margin: 1rem;
     transition: all 0.3s;
+    border-radius: var(--border-radius-products);
+    cursor: pointer;
 }
 button.buttonStyleMinus
 {
@@ -51,6 +53,8 @@ button.buttonStyleMinus
     border: none;
     margin: 1rem;
     transition: all 0.3s;
+    border-radius: var(--border-radius-products);
+    cursor: pointer;
 }
 
 button.buttonStylePlus:hover, button.buttonStyleMinus:hover
