@@ -52,11 +52,11 @@
   ],
   "basket": [
     {
-      "id": "12cf",
+      "id": "2239",
       "img": "https://placehold.co/150x150",
-      "description": "Seventh Product",
-      "price": 45,
-      "productId": 7
+      "description": "Fourth Product",
+      "price": 30,
+      "productId": 4
     }
   ]
 }

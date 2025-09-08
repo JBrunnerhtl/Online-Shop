@@ -8,14 +8,13 @@ function Basket()
     const [basketItems, setBasketItems] = useState<ReactElement[]>([]);
     const [isValid, setIsValid] = useState<boolean>(true);
     const [isLoading, setIsLoading] = useState<boolean>(true);
-
+    const [sum, setSum] = useState<number>(0);
     async function fetchBasketItems() {
         const foundItems: BasketItem[] = [];
         try {
             const response = await fetch("http://localhost:3000/basket");
             if (response.ok) {
                 const data: JsonType[] = await response.json();
-                console.log(data);
                 data.forEach((item) => {
                     let count: number = 0;
                     data.forEach((innerItem) => {
@@ -38,9 +37,14 @@ function Basket()
         {
             console.error(err);
         }
-        console.log(foundItems);
+        let total: number = 0;
+        foundItems.forEach(item => {
+            total += item.item.price * item.quantity;
+        });
+        setSum(total);
+        console.log("1")
         setBasketItems(createCards(foundItems));
-        console.log(basketItems);
+
         if (foundItems.length <= 0)
         {
             setIsValid(false);
@@ -66,6 +70,7 @@ function Basket()
         isValid ?
         <div className={style.divStyle}>
             {basketItems}
+            <p className={style.sumTextStyle}>Sum: {sum}€</p>
         </div> : <h1 className={style.h1Style}>You don't have anything in your basket yet!</h1>
     )
 }

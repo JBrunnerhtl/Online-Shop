@@ -1,17 +1,11 @@
 import PropTypes from "prop-types";
 import style from "./basketCard.module.css"
 import type {JsonType} from "../Type.ts";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 const path = "http://localhost:3000/basket";
 function BasketCard(props: {item: JsonType, quantity: number, onDelete: () => void})
 {
     const [count, setCount] = useState<number>(props.quantity);
-    useEffect(() => {
-        if(count === 0)
-        {
-            props.onDelete();
-        }
-    }, [count, props]);
     return(
         count > 0 ?
         <div>
@@ -24,9 +18,9 @@ function BasketCard(props: {item: JsonType, quantity: number, onDelete: () => vo
                 <p>{props.item.price} €</p>
             </div>
             <div className={style.informationDiv}>
-                <button className={style.buttonStyleMinus} onClick={()=>{deleteItemFromBasket(props.item.productId).then(); setCount(c => c -1); console.log(count)}}>-</button>
+                <button className={style.buttonStyleMinus} onClick={async ()=>{await deleteItemFromBasket(props.item.productId); setCount(c => c -1); console.log(count); props.onDelete()}}>-</button>
                 <span>{count}</span>
-                <button className={style.buttonStylePlus} onClick={()=> {addItemToBasket(props.item).then(); setCount(c => c +1)}}>+</button>
+                <button className={style.buttonStylePlus} onClick={async ()=> {await addItemToBasket(props.item); setCount(c => c +1); props.onDelete()}}>+</button>
             </div>
         </div>
         </div>
