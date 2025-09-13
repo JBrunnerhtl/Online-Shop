@@ -52,11 +52,46 @@
   ],
   "basket": [
     {
-      "id": "2239",
+      "id": "1e81",
+      "img": "https://placehold.co/150x150",
+      "description": "Third Product",
+      "price": 25,
+      "productId": 3
+    },
+    {
+      "id": "16cd",
       "img": "https://placehold.co/150x150",
       "description": "Fourth Product",
       "price": 30,
       "productId": 4
+    },
+    {
+      "id": "c76a",
+      "img": "https://placehold.co/150x150",
+      "description": "Fifth Product",
+      "price": 35,
+      "productId": 5
+    },
+    {
+      "id": "43ee",
+      "img": "https://placehold.co/150x150",
+      "description": "Fifth Product",
+      "price": 35,
+      "productId": 5
+    },
+    {
+      "id": "672f",
+      "img": "https://placehold.co/150x150",
+      "description": "Sixth Product",
+      "price": 40,
+      "productId": 6
+    },
+    {
+      "id": "588a",
+      "img": "https://placehold.co/150x150",
+      "description": "Sixth Product",
+      "price": 40,
+      "productId": 6
     }
   ]
 }

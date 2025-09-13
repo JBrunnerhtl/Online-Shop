@@ -18,9 +18,9 @@ function BasketCard(props: {item: JsonType, quantity: number, onDelete: () => vo
                 <p>{props.item.price} €</p>
             </div>
             <div className={style.informationDiv}>
-                <button className={style.buttonStyleMinus} onClick={async ()=>{await deleteItemFromBasket(props.item.productId); setCount(c => c -1); console.log(count); props.onDelete()}}>-</button>
+                <button className={style.buttonStyleMinus} onClick={async ()=>{await deleteItemFromBasket(props.item.productId).then(() => {setCount(c => c -1); console.log(count); props.onDelete()}) }}>-</button>
                 <span>{count}</span>
-                <button className={style.buttonStylePlus} onClick={async ()=> {await addItemToBasket(props.item); setCount(c => c +1); props.onDelete()}}>+</button>
+                <button className={style.buttonStylePlus} onClick={async ()=> {await addItemToBasket(props.item).then(()=> {setCount(c => c +1); props.onDelete()})}}>+</button>
             </div>
         </div>
         </div>

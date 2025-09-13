@@ -1,6 +1,6 @@
 div.outerDiv
 {
-    margin: 2rem;
+    margin: 5rem;
     display: flex;
     flex-direction: row;
     justify-self: center;

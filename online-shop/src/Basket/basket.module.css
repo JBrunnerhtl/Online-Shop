@@ -14,6 +14,21 @@ h1.h1Style
     font-size: xx-large;
     margin-top: 2rem;
 }
+@media (max-width: 768px) {
+    p.sumTextStyle{
+        color: var(--text-color);
+        font-family: var(--font), sans-serif;
+        font-size: x-large;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        padding: 5%;
+        margin: 0;
+        text-align: right;
+        background-color: var(--background-color);
+        width: 100%;
+    }
+}
 p.sumTextStyle{
     color: var(--text-color);
     font-family: var(--font), sans-serif;
@@ -21,5 +36,9 @@ p.sumTextStyle{
     position: fixed;
     right: 0;
     bottom: 0;
-    margin: 5%;
+    padding: 1%;
+    margin: 0;
+    text-align: right;
+    background-color: var(--background-color);
+    width: 100%;
 }

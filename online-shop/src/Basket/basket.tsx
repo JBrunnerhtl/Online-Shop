@@ -70,6 +70,7 @@ function Basket()
         isValid ?
         <div className={style.divStyle}>
             {basketItems}
+
             <p className={style.sumTextStyle}>Sum: {sum}€</p>
         </div> : <h1 className={style.h1Style}>You don't have anything in your basket yet!</h1>
     )
