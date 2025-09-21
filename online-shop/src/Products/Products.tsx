@@ -23,6 +23,7 @@ function Products() {
         }
         fetchData();
     }, []);
+
     return (<>
         <div className={style.productsDivStyle}>
             {data}
